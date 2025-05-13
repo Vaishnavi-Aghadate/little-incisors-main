@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import AdmissionEnquiry from '../components/AdmissionEnquiry/AdmissionEnquiry';
 
@@ -13,26 +14,15 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 50);
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleEnquiryOpen = () => {
-        setIsEnquiryOpen(true);
-    };
-
-    const handleEnquiryClose = () => {
-        setIsEnquiryOpen(false);
-    };
+    const handleEnquiryOpen = () => setIsEnquiryOpen(true);
+    const handleEnquiryClose = () => setIsEnquiryOpen(false);
 
     return (
         <>
@@ -48,34 +38,38 @@ const Navbar = () => {
 
                     <ul className={`navbar-links ${isMenuOpen ? 'navbar-active' : ''}`}>
                         <div className="navbar-middle-bar"></div>
-                        <li><a href="/" className={isScrolled ? 'navbar-scrolled-link' : ''}>Admissions</a></li>
+                        <li><Link to="/" className={isScrolled ? 'navbar-scrolled-link' : ''}>Admissions</Link></li>
                         <div className="navbar-middle-bar"></div>
+
                         <li className="navbar-dropdown">
-                            <a href="#" className={isScrolled ? 'navbar-scrolled-link' : ''}>Programs ▼</a>
+                            <Link to="#" className={isScrolled ? 'navbar-scrolled-link' : ''}>Programs ▼</Link>
                             <ul className="navbar-dropdown-menu">
-                                <li><a href="/foundational-development">Foundational Development</a></li>
-                                <li><a href="/daycare">Daycare</a></li>
-                                <li><a href="/afterschool">Afterschool Enrichment</a></li>
-                                <li><a href="/learning-advancement">Learning Advancement</a></li>
+                                <li><Link to="/foundational-development">Foundational Development</Link></li>
+                                <li><Link to="/daycare">Daycare</Link></li>
+                                <li><Link to="/afterschool">Afterschool Enrichment</Link></li>
+                                <li><Link to="/learning-advancement">Learning Advancement</Link></li>
                             </ul>
                         </li>
+
                         <div className="navbar-middle-bar"></div>
-                        <li><a href="/corporates" className={isScrolled ? 'navbar-scrolled-link' : ''}>Corporates</a></li>
+                        <li><Link to="/corporates" className={isScrolled ? 'navbar-scrolled-link' : ''}>Corporates</Link></li>
                         <div className="navbar-middle-bar"></div>
-                        <li><a href="/foundational-development" className={isScrolled ? 'navbar-scrolled-link' : ''}>Curriculum</a></li>
+                        <li><Link to="/foundational-development" className={isScrolled ? 'navbar-scrolled-link' : ''}>Curriculum</Link></li>
                         <div className="navbar-middle-bar"></div>
+
                         <li className="navbar-dropdown">
-                            <a href="#" className={isScrolled ? 'navbar-scrolled-link' : ''}>Resources ▼</a>
+                            <Link to="#" className={isScrolled ? 'navbar-scrolled-link' : ''}>Resources ▼</Link>
                             <ul className="navbar-dropdown-menu">
-                                <li><a href="/fee-structure">Fee Structure</a></li>
-                                <li><a href="/safety">Safety at Little Incisors</a></li>
-                                <li><a href="/parent-thing">That Parent Thing</a></li>
-                                <li><a href="/events-webinar">Events and Webinar</a></li>
+                                <li><Link to="/fee-structure">Fee Structure</Link></li>
+                                <li><Link to="/safety">Safety at Little Incisors</Link></li>
+                                <li><Link to="/parent-thing">That Parent Thing</Link></li>
+                                <li><Link to="/events-webinar">Events and Webinar</Link></li>
                             </ul>
                         </li>
+
                         <div className="navbar-middle-bar"></div>
                         <li className="navbar-mobile-cta">
-                            <button 
+                            <button
                                 className={`navbar-cta-button ${isScrolled ? 'navbar-scrolled-button' : ''}`}
                                 onClick={handleEnquiryOpen}
                             >
@@ -84,7 +78,7 @@ const Navbar = () => {
                         </li>
                     </ul>
 
-                    <button 
+                    <button
                         className={`navbar-cta-button navbar-desktop-cta ${isScrolled ? 'navbar-scrolled-button' : ''}`}
                         onClick={handleEnquiryOpen}
                     >
