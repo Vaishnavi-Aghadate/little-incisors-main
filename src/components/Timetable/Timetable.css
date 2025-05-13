@@ -1,0 +1,90 @@
+.daycare-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: #fff8e1;
+    margin-top: 7%;
+}
+
+.schedule-container {
+    display: flex;
+    width: 80%;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -10%;
+}
+
+.timetable {
+    flex: 1;
+    padding: 30px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: transform 0.3s;
+}
+
+.timetable-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.timetable-title span {
+    color: #ff51b3;
+}
+
+.timetable ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timetable li {
+    padding: 12px;
+    margin: 8px 0;
+    color: #333;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.timetable li:hover, 
+.timetable li.active {
+    color: rgb(199, 15, 15);
+    transform: scale(1.05);
+}
+
+.timetable li .dot {
+    width: 12px;
+    height: 12px;
+    background: #ff7043;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.image-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.image-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: opacity 0.5s ease, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

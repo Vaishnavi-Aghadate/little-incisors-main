@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+
+
+.preschool-content .logo .logo-part1 {
+    color: rgba(245, 33, 104, 0.804); /* Choose your color for 'Little' */
+    font-size: 1.8rem;
+    
+}
+
+.preschool-content .logo .logo-part2 {
+    color: rgb(102, 169, 131); /* Choose your color for 'Incisors' */
+    font-style: italic;
+    
+    
+}
+.preschool-content .logo 
+{
+    margin-left: 35%;
+}
+
+.preschool-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 50px 20px; */
+    background: linear-gradient(to right, #ffffff, #f3f3f3);
+}
+
+.preschool-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.preschool-image {
+    flex: 1;
+    padding-right: 20px;
+    margin-top: 4%;
+}
+
+.preschool-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.preschool-content {
+    flex: 1;
+    padding-left: 3px;
+}
+
+.preschool-content h3 {
+    color: #ff4081;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.preschool-content h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.preschool-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background: #fff3f6;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-list li i {
+    color: #ff4081;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .preschool-container {
+        flex-direction: column;
+    }
+
+    .preschool-image {
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    .preschool-content {
+        padding-left: 0;
+    }
+    
+}

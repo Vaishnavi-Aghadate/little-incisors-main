@@ -1,0 +1,68 @@
+.why-choose {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0f9ff, #cbebff);
+  }
+  
+  .why-choose h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .why-choose h2 span {
+    color: #2b7de9;
+  }
+  
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    background:#a3dbe0;; /* Solid White Background */
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 1s ease-in-out forwards;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    color: #333;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Stronger Shadow on Hover */
+  }
+  
+  .feature-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 15px;
+    color: #2b7de9; /* Icon Color */
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .feature-card p {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

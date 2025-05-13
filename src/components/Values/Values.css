@@ -1,0 +1,138 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%); */
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    /* margin: auto; */
+    /* padding: 50px 0; */
+}
+
+h2 {
+    font-size: 40px;
+    color: #ff4081;
+    margin-top: 4rem ;
+    margin-bottom: 4rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.shivaji-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(circle, #ffefc1, #ffcc80);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.shivaji-section::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    animation: floatBubble 6s infinite linear;
+}
+
+.shivaji-section::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 165, 0, 0.3);
+    border-radius: 50%;
+    bottom: -60px;
+    right: -60px;
+    animation: floatBubble 6s infinite linear reverse;
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0px); }
+}
+
+.shivaji-content {
+    width: 60%;
+    text-align: left;
+    animation: slideInLeft 1.2s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.shivaji-content h3 {
+    font-size: 28px;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+#values p {
+    font-size: 18px;
+    color: #5d4037;
+    line-height: 1.6;
+    background-color: transparent;
+}
+
+.shivaji-image {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    animation: scaleIn 1.2s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.shivaji-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.shivaji-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    .shivaji-section {
+        flex-direction: column-reverse;
+    }
+
+    .shivaji-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .shivaji-image {
+        width: 100%;
+    }
+    
+}

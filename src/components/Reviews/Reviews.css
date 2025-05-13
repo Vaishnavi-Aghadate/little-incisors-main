@@ -1,0 +1,177 @@
+.student-reviews {
+  margin: 60px auto;
+  max-width: 1200px;
+  text-align: center;
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* .student-reviews h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+} */
+
+/* Reviews Container */
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards in a single row */
+  gap: 10px; /* Reduce gap between cards */
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* Review Styling */
+.review {
+  background-color: #f2fdff;
+  padding: 15px; /* Reduce padding */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px; /* Reduce minimum width for each card */
+}
+
+/* Slight hover effect for each review */
+.review:hover {
+  transform: translateY(-10px); /* Slightly lift the review */
+  background-color: #ffe0b2; /* Light orange background */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Zigzag Effect: Odd items down, Even items up */
+.review:nth-child(odd) {
+  transform: translateY(20px); /* Move odd items down */
+}
+
+.review:nth-child(even) {
+  transform: translateY(-40px); /* Move even items up */
+}
+
+/* Review Header Styling */
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+.student-image {
+  width: 60px; /* Reduce image size */
+  height: 60px; /* Reduce image size */
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.review:hover .student-image {
+  transform: scale(1.1); /* Slight scale effect for the image on hover */
+}
+
+.student-name {
+  font-weight: bold;
+  font-size: 1.1em; /* Reduce font size */
+  color: #333;
+}
+
+.stars {
+  display: flex;
+  margin-top: 5px;
+}
+
+.star {
+  font-size: 1.2em; /* Reduce star size */
+  color: gold;
+  margin-right: 3px;
+}
+
+/* Review Message Styling */
+.review-message {
+  font-style: italic;
+  color: #434141;
+  font-size: 0.9em; /* Reduce font size */
+  line-height: 1.4;
+}
+
+/* Animation for Fade-in Effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .reviews-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 cards in a row for smaller desktops */
+  }
+}
+
+@media (max-width: 1024px) {
+  .reviews-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards in a row for tablets */
+  }
+
+  .review:nth-child(odd),
+  .review:nth-child(even) {
+      transform: none; /* Remove the zigzag transform on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .student-reviews h2 {
+      font-size: 2em; /* Reduce font size for smaller screens */
+  }
+
+  .reviews-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards in a row for smaller tablets */
+      gap: 15px;
+  }
+
+  .review {
+      padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .student-image {
+      width: 50px;
+      height: 50px; /* Reduce image size for smaller screens */
+  }
+
+  .student-name {
+      font-size: 1em; /* Reduce font size for smaller screens */
+  }
+
+  .review-message {
+      font-size: 0.85em; /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .student-reviews h2 {
+      font-size: 1.8em; /* Further reduce font size for mobile */
+  }
+
+  .reviews-container {
+      grid-template-columns: 1fr; /* Stack cards on mobile */
+  }
+
+  .review {
+      padding: 8px; /* Further reduce padding for mobile */
+  }
+
+  .student-image {
+      width: 40px;
+      height: 40px; /* Further reduce image size for mobile */
+  }
+
+  .student-name {
+      font-size: 0.9em; /* Further reduce font size for mobile */
+  }
+
+  .review-message {
+      font-size: 0.8em; /* Further reduce font size for mobile */
+  }
+}

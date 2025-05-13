@@ -1,0 +1,142 @@
+.safety-container {
+    /* padding-top: 80px; */
+    overflow-x: hidden;
+    background: #fff;
+}
+
+/* Hero Section */
+.safety-hero {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.safety-hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.safety-hero h1 span {
+    color: #4CAF50;
+}
+
+.safety-hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Safety Measures Grid */
+.safety-measures {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.safety-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.safety-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.safety-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.safety-content h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.safety-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95em;
+    margin: 0;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+}
+
+.whatsapp-button:hover {
+    background: #128C7E;
+}
+
+.whatsapp-icon {
+    font-size: 1.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .safety-measures {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .safety-measures {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-hero h1 {
+        font-size: 2em;
+    }
+
+    .safety-hero p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .safety-hero h1 {
+        font-size: 1.8em;
+    }
+
+    .safety-card {
+        margin: 0;
+    }
+
+    .whatsapp-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

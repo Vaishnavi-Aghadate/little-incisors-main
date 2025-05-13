@@ -1,0 +1,132 @@
+<section class="daycare-schedule">
+    <div class="schedule-container">
+        <div class="timetable">
+            <h2 class="timetable-title">A Day at<span> Little </span><span> Incisors</span></h2>
+            <ul>
+                <li onclick="showImage('arrival', this)"><span class="dot"></span> Arrival / Small Group Play</li>
+                <li onclick="showImage('breakfast', this)"><span class="dot"></span> Breakfast</li>
+                <li onclick="showImage('circle-time', this)"><span class="dot"></span> Routine Circle Time</li>
+                <li onclick="showImage('departure', this)"><span class="dot"></span> Departure for Half Day Care</li>
+                <li onclick="showImage('lunch', this)"><span class="dot"></span> Lunch</li>
+                <li onclick="showImage('nap-time', this)"><span class="dot"></span> Nap Time</li>
+                <li onclick="showImage('snack-time', this)"><span class="dot"></span> Freshen Up / Snack Time</li>
+                <li onclick="showImage('music', this)"><span class="dot"></span> Music & Movement</li>
+                <li onclick="showImage('story-time', this)"><span class="dot"></span> Story Time</li>
+                <li onclick="showImage('play-time', this)"><span class="dot"></span> Indoor / Outdoor Play</li>
+                <li onclick="showImage('free-play', this)"><span class="dot"></span> Free Play / Departure</li>
+            </ul>
+        </div>
+        <div class="image-display">
+            <img id="schedule-image" src="arrival.jpg" alt="Activity Image">
+        </div>
+    </div>
+</section>
+
+<style>
+.daycare-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: #fff8e1;
+}
+.schedule-container {
+    display: flex;
+    width: 80%;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.timetable {
+    flex: 1;
+    padding: 30px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: transform 0.3s;
+}
+.timetable-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+.timetable-title span {
+    color: #ff51b3;
+   
+}
+.timetable ul {
+    list-style: none;
+    padding: 0;
+}
+.timetable li {
+    padding: 12px;
+    margin: 8px 0;
+   
+    color: #333;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+.timetable li:hover, .timetable li.active {
+  
+   color: rgb(199, 15, 15);
+    transform: scale(1.05);
+}
+.timetable li .dot {
+    width: 12px;
+    height: 12px;
+    background: #ff7043;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.image-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.image-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: opacity 0.5s ease, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+function showImage(activity, element) {
+    const imageMap = {
+        'arrival': 'arrival.jpg',
+        'breakfast': 'breakfast.jpg',
+        'circle-time': 'circletime.jpg',
+        'departure': 'departure.jpg',
+        'lunch': 'lunch.jpg',
+        'nap-time': 'nap-time.jpg',
+        'snack-time': 'snack-time.jpg',
+        'music': 'music.jpg',
+        'story-time': 'story-time.jpg',
+        'play-time': 'play-time.jpg',
+        'free-play': 'free-play.jpg'
+    };
+    
+    document.getElementById('schedule-image').src = imageMap[activity] || 'default.jpg';
+    document.getElementById('schedule-image').style.opacity = 0;
+    setTimeout(() => {
+        document.getElementById('schedule-image').style.opacity = 1;
+    }, 300);
+    
+    document.querySelectorAll('.timetable li').forEach(li => li.classList.remove('active'));
+    element.classList.add('active');
+}
+</script>
